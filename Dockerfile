@@ -6,9 +6,9 @@ COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
 COPY . .
-RUN go build -o ./sender sender.go
-RUN go build -o .receiver receiver.go
+RUN go build -o ./emit emit.go
+RUN go build -o ./receive receive.go
 
-CMD ["./sender"]
-CMD ["./receiver"]
+CMD ["./emit"]
+CMD ["./receive"]
 
