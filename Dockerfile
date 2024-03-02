@@ -6,5 +6,5 @@ COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
 COPY . .
-RUN go build -o ./emit emit_topic.go
-RUN go build -o ./receive receive_topic.go
+RUN go build -o ./emit rpc_client.go
+RUN go build -o ./receive rpc_server.go
